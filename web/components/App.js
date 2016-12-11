@@ -1,5 +1,12 @@
 import React from 'react'
 
-const App = () => (<h2>Hello world !</h2>)
+import Async from './Async'
+
+const App = () => (
+  <div>
+    <h2>Hello world !</h2>
+    <Async />
+  </div>
+)
 
 export default App
