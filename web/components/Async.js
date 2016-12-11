@@ -1,15 +1,17 @@
 import React from 'react'
 
 class Async extends React.Component {
-  state = { json: undefined }
+  state = { json: this.props.state.infos.json }
+
+  componentWillReceiveProps = (nextProps) => {
+    this.setState({
+      json: JSON.stringify(nextProps.state.infos.json, null, 2),
+    })
+  }
 
   onClick = () => this.asyncTest()
 
-  asyncTest = async () => {
-    const res = await fetch('https://raw.githubusercontent.com/fbonniec/react-app-starter/master/package.json')
-    const json = await res.json()
-    this.setState({ json: JSON.stringify(json, null, 2) })
-  }
+  asyncTest = async () => { this.props.actions.getPackage() }
 
   render = () => (
     <div>
@@ -18,6 +20,17 @@ class Async extends React.Component {
         : <button onClick={this.onClick}>Load package.json</button>}
     </div>
   )
+}
+
+Async.propTypes = {
+  state: React.PropTypes.shape({
+    infos: React.PropTypes.shape({
+      json: React.PropTypes.shape({}),
+    }),
+  }),
+  actions: React.PropTypes.shape({
+    getPackage: React.PropTypes.func.isRequired,
+  }),
 }
 
 export default Async

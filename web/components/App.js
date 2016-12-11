@@ -1,12 +1,14 @@
 import React from 'react'
 
+import { mapping } from '../../common/mapping'
+
 import Async from './Async'
 
-const App = () => (
+const App = (props) => (
   <div>
     <h2>Hello world !</h2>
-    <Async />
+    <Async {...props} />
   </div>
 )
 
-export default App
+export default mapping(App)

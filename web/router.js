@@ -1,7 +1,9 @@
 import React from 'react'
 import { BrowserRouter, Match, Miss } from 'react-router'
+import { Provider } from 'react-redux'
 
 import App from './components/App'
+import store from '../common/store'
 
 const NoMatch = ({ location }) => (
   <div>
@@ -15,12 +17,14 @@ NoMatch.propTypes = {
 }
 
 const Router = () => (
-  <BrowserRouter>
-    <div>
-      <Match exactly pattern='/' component={App} />
-      <Miss component={NoMatch} />
-    </div>
-  </BrowserRouter>
+  <Provider store={store}>
+    <BrowserRouter>
+      <div>
+        <Match exactly pattern='/' component={App} />
+        <Miss component={NoMatch} />
+      </div>
+    </BrowserRouter>
+  </Provider>
 )
 
 export default Router
