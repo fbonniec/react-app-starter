@@ -16,6 +16,7 @@ module.exports = {
     hot: true,
     contentBase: resolve(__dirname, 'web'),
     publicPath: '/',
+    historyApiFallback: true,
   },
   module: {
     loaders: [
