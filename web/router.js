@@ -13,7 +13,7 @@ const NoMatch = ({ location }) => (
 )
 
 NoMatch.propTypes = {
-  location: React.PropTypes.shape({}),
+  location: React.PropTypes.shape({}).isRequired,
 }
 
 const Router = () => (

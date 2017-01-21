@@ -4,9 +4,7 @@ class Async extends React.Component {
   state = { json: this.props.state.infos.json }
 
   componentWillReceiveProps = (nextProps) => {
-    this.setState({
-      json: JSON.stringify(nextProps.state.infos.json, null, 2),
-    })
+    this.setState({ json: JSON.stringify(nextProps.state.infos.json, null, 2) })
   }
 
   onClick = () => this.asyncTest()
@@ -27,10 +25,10 @@ Async.propTypes = {
     infos: React.PropTypes.shape({
       json: React.PropTypes.shape({}),
     }),
-  }),
+  }).isRequired,
   actions: React.PropTypes.shape({
     getPackage: React.PropTypes.func.isRequired,
-  }),
+  }).isRequired,
 }
 
 export default Async
