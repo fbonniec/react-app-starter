@@ -7,6 +7,7 @@ function build {
       exit 1;
   fi
   cp web/index.html dist
+  cp web/index.html dist/200.html
   echo '👏'
 }
 
