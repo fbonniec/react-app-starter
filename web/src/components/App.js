@@ -1,6 +1,5 @@
 import React from 'react'
-
-import { mapping } from '../../common/mapping'
+import { mapping } from 'shared-redux/utils/mapping'
 
 import Async from './Async'
 

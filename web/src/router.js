@@ -1,9 +1,10 @@
 import React from 'react'
+import store from 'shared-redux/store/store'
+
 import { BrowserRouter, Match, Miss } from 'react-router'
 import { Provider } from 'react-redux'
 
 import App from './components/App'
-import store from '../common/store'
 
 const NoMatch = ({ location }) => (
   <div>

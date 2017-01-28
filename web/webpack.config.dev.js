@@ -9,12 +9,11 @@ module.exports = {
     'babel-polyfill',
     './index.js',
   ],
-  context: resolve(__dirname, 'web'),
+  context: resolve(__dirname, 'src'),
   devtool: 'inline-source-map',
   devServer: {
     port: 3000,
     hot: true,
-    contentBase: resolve(__dirname, 'web'),
     publicPath: '/',
     historyApiFallback: true,
   },
@@ -24,7 +23,7 @@ module.exports = {
         loaders: [
           'babel-loader',
         ],
-        exclude: /node_modules/,
+        exclude: /.*node_modules((?!shared-redux).)*$/,
       },
     ],
   },

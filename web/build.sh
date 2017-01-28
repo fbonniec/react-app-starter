@@ -6,8 +6,8 @@ function build {
   if [ $? -ne 0 ]; then
       exit 1;
   fi
-  cp web/index.html dist
-  cp web/index.html dist/200.html
+  cp src/index.html dist
+  cp src/index.html dist/200.html
   echo '👏'
 }
 

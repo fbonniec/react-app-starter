@@ -9,7 +9,7 @@ class Async extends React.Component {
 
   onClick = () => this.asyncTest()
 
-  asyncTest = async () => { this.props.actions.getPackage() }
+  asyncTest = () => this.props.actions.getPackage()
 
   render = () => (
     <div>

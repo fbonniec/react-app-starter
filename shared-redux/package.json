@@ -1,0 +1,25 @@
+{
+  "name": "shared-redux",
+  "version": "0.1.0",
+  "author": "f.bonniec@me.com",
+  "license": "MIT",
+  "scripts": {
+    "lint": "./node_modules/.bin/eslint ./"
+  },
+  "devDependencies": {
+    "babel-eslint": "^7.1.1",
+    "eslint": "^3.14.1",
+    "eslint-config-airbnb": "^14.0.0",
+    "eslint-friendly-formatter": "^2.0.7",
+    "eslint-plugin-babel": "^4.0.1",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^3.0.2",
+    "eslint-plugin-react": "^6.9.0"
+  },
+  "dependencies": {
+    "react": "^15.4.2",
+    "react-redux": "^5.0.2",
+    "redux": "^3.6.0",
+    "redux-thunk": "^2.2.0"
+  }
+}

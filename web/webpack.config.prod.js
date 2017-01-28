@@ -11,14 +11,14 @@ module.exports = {
     path: resolve(__dirname, 'dist'),
     publicPath: '/',
   },
-  context: resolve(__dirname, 'web'),
+  context: resolve(__dirname, 'src'),
   module: {
     loaders: [
       { test: /\.js$/,
         loaders: [
           'babel-loader',
         ],
-        exclude: /node_modules/,
+        exclude: /.*node_modules((?!shared-redux).)*$/,
       },
     ],
   },
