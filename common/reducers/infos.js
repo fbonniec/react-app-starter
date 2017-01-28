@@ -1,17 +1,15 @@
 import { INFOS } from '../constants'
 
-const stopLoading = (error) => ({ loading: false, error })
-
-const defaultState = { ...stopLoading(false), json: undefined }
+const defaultState = { loading: 0, json: undefined }
 
 const infos = (state = defaultState, action) => {
   switch (action.type) {
     case INFOS.LOADING:
-      return { ...state, loading: true }
+      return { ...state, loading: 1 }
     case INFOS.LOADED_SUCCESS:
-      return { json: action.json, ...stopLoading(false) }
+      return { json: action.json, loading: 0 }
     case INFOS.LOADED_ERROR:
-      return { ...state, ...stopLoading(true) }
+      return { ...state, loading: -1 }
     default:
       return state
   }

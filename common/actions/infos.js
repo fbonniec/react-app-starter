@@ -9,6 +9,7 @@ export const getPackage = () => async (dispatch, getState) => {
     const json = await res.json()
     dispatch({ type: INFOS.LOADED_SUCCESS, json })
   } catch (e) {
+    console.warn(e)
     dispatch({ type: INFOS.LOADED_ERROR })
   }
 }
